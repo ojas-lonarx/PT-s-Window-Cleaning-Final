@@ -1,21 +1,22 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="PT’s Window Cleaning - Reliable window washing, glass care, and cleaning in Broomfield, Arvada, Thornton, Lafayette, Westminster, Boulder, Erie, Superior, and Northglenn, CO, USA. Book online 06:30 – 19:00. 5-Star Rated. Call (720) 556-1588 for a free quote.">
+        content="PT’s Window Cleaning - Reliable window washing, glass care, and cleaning in Broomfield, Arvada, Thornton, Lafayette, Westminster, Boulder, Erie, Superior, and Northglenn, CO, USA. Book online 7 AM to 6 PM Denver Time. 5-Star Rated. Call +1 (720) 556-1588 for a free quote.">
     <meta name="keywords"
         content="Broomfield, Arvada, Thornton, Lafayette, Westminster, Boulder, Erie, Superior, Northglenn, Window Cleaning, PT’s Window Cleaning, Residential Window Cleaning, Interior and exterior window cleaning, Online Booking Broomfield, 5-Star Window Cleaners">
     <meta name="author" content="PT’s Window Cleaning">
     <meta property="og:title"
         content="PT’s Window Cleaning | Broomfield, Arvada, Thornton, Lafayette, Westminster, Boulder, Erie, Superior, Northglenn - Book Online">
     <meta property="og:description"
-        content="Professional window cleaning services in Broomfield, Arvada, Thornton, Lafayette, Westminster, Boulder, Erie, Superior, and Northglenn. Book online 06:30 – 19:00. Licensed & 5-star rated.">
+        content="Professional window cleaning services in Broomfield, Arvada, Thornton, Lafayette, Westminster, Boulder, Erie, Superior, and Northglenn. Book online 7 AM to 6 PM Denver Time. Licensed & 5-star rated.">
     <meta property="og:type" content="website">
     <title>PT’s Window Cleaning | Broomfield, Arvada, Thornton, Lafayette, Westminster, Boulder, Erie, Superior,
-        Northglenn - Book Online 06:30 – 19:00</title>
+        Northglenn - Book Online 7 AM to 6 PM Denver Time</title>
+    <link rel="icon" type="image/png" href="logo.png">
 
     <!-- Fonts, Icons & EmailJS -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
@@ -1272,9 +1273,9 @@
                 <p>From interior to exterior windows, PT’s Window Cleaning provides reliable, high-quality
                     window washing for your home and business.</p>
                 <div style="margin-top: 35px;">
-                    <button onclick="navigateTo('contact')" class="btn btn-primary" style="margin-right: 15px;">Book
+                    <button onclick="navigateTo('booking')" class="btn btn-primary" style="margin-right: 15px;">Book
                         Online Now</button>
-                    <a href="tel:7205561588" class="btn btn-outline">Call (720) 556-1588</a>
+                    <a href="tel:7205561588" class="btn btn-outline">Call +1 (720) 556-1588</a>
                 </div>
             </div>
         </div>
@@ -1397,7 +1398,7 @@
                         <li><i class="fas fa-check"></i> 5-Star Customer Rating</li>
                         <li><i class="fas fa-check"></i> Transparent Pricing</li>
                         <li><i class="fas fa-check"></i> Punctual & Clean</li>
-                        <li><i class="fas fa-check"></i> Online Booking Available 06:30 – 19:00</li>
+                        <li><i class="fas fa-check"></i> Online Booking Available 7 AM to 6 PM Denver Time</li>
                         <li><i class="fas fa-check"></i> Secure Online Payments</li>
                     </ul>
                 </div>
@@ -1587,7 +1588,7 @@
                 <h2>Book Your Service Online</h2>
                 <div class="divider"></div>
                 <p style="margin-top: 15px; color: var(--text-muted);">Schedule your window cleaning appointment
-                    instantly. Our booking system is available 06:30 – 19:00.</p>
+                    instantly. Our booking system is available 7 AM to 6 PM Denver Time.</p>
             </div>
 
             <div
@@ -1620,7 +1621,7 @@
                         <i class="fas fa-phone-alt"></i>
                         <div>
                             <strong>Phone</strong><br>
-                            <a href="tel:7205561588" style="color: rgba(255,255,255,0.8);">(720) 556-1588</a>
+                            <a href="tel:7205561588" style="color: rgba(255,255,255,0.8);">+1 (720) 556-1588</a>
                         </div>
                     </div>
 
@@ -1646,7 +1647,7 @@
                         <div>
                             <strong>Hours</strong><br>
                             <span style="color: rgba(255,255,255,0.8);">Mon-Sat: 8AM - 6PM<br>Online Booking:
-                                06:30 – 19:00</span>
+                                7 AM to 6 PM Denver Time</span>
                         </div>
                     </div>
 
@@ -1662,6 +1663,7 @@
 
                 <div class="contact-form" style="background: #1a1a2e; padding: 50px; color: white;">
                     <form onsubmit="submitContactForm(event)">
+                        <!-- Row 1: Name + Phone -->
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-bottom: 25px;">
                             <div class="form-group" style="margin-bottom: 0;">
                                 <label class="form-label" style="color: #e2e8f0;">Full Name *</label>
@@ -1674,16 +1676,26 @@
                                     required style="background: #2a2a3e; border-color: #3a3a4e; color: white;">
                             </div>
                         </div>
+                        <!-- Address (required) -->
                         <div class="form-group">
-                            <label class="form-label" style="color: #e2e8f0;">Email Address *</label>
-                            <input type="email" id="contactEmail" class="form-control" placeholder="you@example.com"
-                                required style="background: #2a2a3e; border-color: #3a3a4e; color: white;">
+                            <label class="form-label" style="color: #e2e8f0;">Address *</label>
+                            <input type="text" id="contactAddress" class="form-control"
+                                placeholder="123 Main St, Broomfield, CO 80020" required
+                                style="background: #2a2a3e; border-color: #3a3a4e; color: white;">
                         </div>
+                        <!-- Email (optional) -->
                         <div class="form-group">
-                            <label class="form-label" style="color: #e2e8f0;">Number of Windows *</label>
-                            <select id="contactWindows" class="form-control" required
+                            <label class="form-label" style="color: #e2e8f0;">Email Address <span
+                                    style="color:#94a3b8; font-weight:400;">(optional)</span></label>
+                            <input type="email" id="contactEmail" class="form-control" placeholder="you@example.com"
+                                style="background: #2a2a3e; border-color: #3a3a4e; color: white;">
+                        </div>
+                        <!-- Number of Window Panes -->
+                        <div class="form-group">
+                            <label class="form-label" style="color: #e2e8f0;">Number of Window PANES *</label>
+                            <select id="contactPanes" class="form-control" required
                                 style="background: #2a2a3e; border-color: #3a3a4e; color: white; appearance: auto;">
-                                <option value="" style="color: #999;">Select number of windows...</option>
+                                <option value="" style="color: #999;">Select...</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -1694,6 +1706,81 @@
                                 <option value="8+">8+</option>
                             </select>
                         </div>
+                        <!-- Row: Number of Screens + Time Since Last Cleaning -->
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-bottom: 25px;">
+                            <div class="form-group" style="margin-bottom: 0;">
+                                <label class="form-label" style="color: #e2e8f0;">Number of Screens</label>
+                                <select id="contactScreens" class="form-control"
+                                    style="background: #2a2a3e; border-color: #3a3a4e; color: white; appearance: auto;">
+                                    <option value="" style="color: #999;">Select...</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8+">8+</option>
+                                </select>
+                            </div>
+                            <div class="form-group" style="margin-bottom: 0;">
+                                <label class="form-label" style="color: #e2e8f0;">Time Since Last Cleaning</label>
+                                <input type="text" id="contactLastCleaned" class="form-control"
+                                    placeholder="e.g. 6 months, 1 year, Never..."
+                                    style="background: #2a2a3e; border-color: #3a3a4e; color: white;">
+                            </div>
+                        </div>
+                        <!-- Row: Screen Cleaning + Track Cleaning (add-ons) -->
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-bottom: 8px;">
+                            <div class="form-group" style="margin-bottom: 0;">
+                                <label class="form-label" style="color: #e2e8f0;">Window Screen Cleaning</label>
+                                <select id="contactScreenCleaning" class="form-control"
+                                    style="background: #2a2a3e; border-color: #3a3a4e; color: white; appearance: auto;">
+                                    <option value="" style="color: #999;">Select...</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                            <div class="form-group" style="margin-bottom: 0;">
+                                <label class="form-label" style="color: #e2e8f0;">Window Track Cleaning</label>
+                                <select id="contactTrackCleaning" class="form-control"
+                                    style="background: #2a2a3e; border-color: #3a3a4e; color: white; appearance: auto;">
+                                    <option value="" style="color: #999;">Select...</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+                        <p style="font-size: 0.78rem; color: #94a3b8; margin-bottom: 22px; text-align: center;">
+                            <i class="fas fa-circle-exclamation"
+                                style="color: var(--secondary); margin-right: 4px;"></i>
+                            Additional charges may apply for screen &amp; track cleaning.
+                        </p>
+                        <!-- Row: Property Style + Cleaning Style -->
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-bottom: 25px;">
+                            <div class="form-group" style="margin-bottom: 0;">
+                                <label class="form-label" style="color: #e2e8f0;">Property Style</label>
+                                <select id="contactPropertyStyle" class="form-control"
+                                    style="background: #2a2a3e; border-color: #3a3a4e; color: white; appearance: auto;">
+                                    <option value="" style="color: #999;">Select...</option>
+                                    <option value="Ranch">Ranch</option>
+                                    <option value="1 Story Building">1 Story Building</option>
+                                    <option value="2 Story Building">2 Story Building</option>
+                                    <option value="3 Story Building">3 Story Building</option>
+                                </select>
+                            </div>
+                            <div class="form-group" style="margin-bottom: 0;">
+                                <label class="form-label" style="color: #e2e8f0;">Cleaning Style</label>
+                                <select id="contactCleaningStyle" class="form-control"
+                                    style="background: #2a2a3e; border-color: #3a3a4e; color: white; appearance: auto;">
+                                    <option value="" style="color: #999;">Select...</option>
+                                    <option value="Interior">Interior</option>
+                                    <option value="Exterior">Exterior</option>
+                                    <option value="Both">Both (Interior &amp; Exterior)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- Service Type -->
                         <div class="form-group">
                             <label class="form-label" style="color: #e2e8f0;">Service Type</label>
                             <select id="contactService" class="form-control"
@@ -1708,15 +1795,25 @@
                                 <option value="Rooftop / skylight cleaning">Rooftop / skylight cleaning</option>
                             </select>
                         </div>
+                        <!-- Message (optional) -->
                         <div class="form-group">
-                            <label class="form-label" style="color: #e2e8f0;">Your Message *</label>
-                            <textarea id="contactMessage" class="form-control" rows="5"
-                                placeholder="Tell us about your windows, building, or cleaning needs..." required
+                            <label class="form-label" style="color: #e2e8f0;">Your Message <span
+                                    style="color:#94a3b8; font-weight:400;">(optional)</span></label>
+                            <textarea id="contactMessage" class="form-control" rows="4"
+                                placeholder="Tell us about your windows, building, or cleaning needs..."
                                 style="background: #2a2a3e; border-color: #3a3a4e; color: white; resize: vertical;"></textarea>
                         </div>
+                        <!-- Disclaimer -->
+                        <p
+                            style="font-size: 0.82rem; color: #94a3b8; margin-bottom: 18px; text-align: center; line-height: 1.6; border: 1px solid #3a3a4e; border-radius: 8px; padding: 12px 16px; background: rgba(255,255,255,0.03);">
+                            <i class="fas fa-info-circle" style="color: var(--secondary); margin-right: 5px;"></i>
+                            <em>Please note: The quotation provided is an approximate quote only and is subject to
+                                change based on an in-person site visit.</em>
+                        </p>
+                        <!-- Submit Button -->
                         <button type="submit" class="btn"
                             style="background: var(--secondary); color: #000; width: 100%; font-size: 1rem; font-weight: 700; padding: 18px; border-radius: 50px; letter-spacing: 1px; display: flex; align-items: center; justify-content: center; gap: 10px;">
-                            <i class="fas fa-paper-plane"></i> SEND MESSAGE
+                            <i class="fas fa-paper-plane"></i> GET FREE ESTIMATE
                         </button>
                         <p style="text-align: center; margin-top: 15px; font-size: 0.85rem; color: #94a3b8;">
                             <i class="fas fa-lock" style="color: var(--secondary); margin-right: 5px;"></i>
@@ -1755,10 +1852,9 @@
                     style="background: white; padding: 25px; margin-bottom: 20px; border-radius: var(--radius); box-shadow: var(--shadow-sm); border-left: 4px solid var(--secondary);">
                     <h3 style="color: var(--primary-dark); margin-bottom: 15px; font-size: 1.1rem;">What is your booking
                         availability?</h3>
-                    <p style="color: var(--text-muted); line-height: 1.6;">We offer online booking from 06:30 – 19:00
-                        daily. Our standard operating hours are Monday through Saturday, 8AM – 6PM. We also offer
-                        emergency and rush services. Use our online booking system to schedule at your convenience or
-                        call (720) 556-1588.</p>
+                    <p style="color: var(--text-muted); line-height: 1.6;">We offer online booking from 7 AM to 6 PM Denver Time
+                        daily. Our standard operating days are Sunday to Saturday. Use our online booking system to schedule at your convenience or
+                        call +1 (720) 556-1588.</p>
                 </div>
 
                 <!-- FAQ Item 4 -->
@@ -1778,7 +1874,7 @@
                     <h3 style="color: var(--primary-dark); margin-bottom: 15px; font-size: 1.1rem;">Are you licensed and
                         insured?</h3>
                     <p style="color: var(--text-muted); line-height: 1.6;">Yes! PT's Window Cleaning is fully licensed
-                        and insured. We take safety seriously and maintain comprehensive liability coverage for all our
+                        and fully insured. We take safety seriously and maintain comprehensive liability coverage for all our
                         work. Your home and property are protected with us.</p>
                 </div>
 
@@ -1830,7 +1926,7 @@
                     <h3 style="color: var(--primary-dark); margin-bottom: 15px; font-size: 1.1rem;">Still have
                         questions?</h3>
                     <p style="color: var(--text-muted); line-height: 1.6;">If you can't find the answer here, feel free
-                        to reach out! Call us at <strong>(720) 556-1588</strong> or use our chat assistant on the
+                        to reach out! Call us at <strong>+1 (720) 556-1588</strong> or use our chat assistant on the
                         website. Our team is available to help with any questions about our services.</p>
                 </div>
             </div>
@@ -1880,15 +1976,15 @@
             </div>
             <div class="footer-col contact-col">
                 <h4>Contact</h4>
-                <p><i class="fas fa-phone-alt"></i> (720) 556-1588</p>
+                <p><i class="fas fa-phone-alt"></i> +1 (720) 556-1588</p>
                 <p><i class="fas fa-envelope"></i> ptswindowcleaning@gmail.com</p>
-                <p><i class="fas fa-map-marker-alt"></i> Colorodo, USA</p>
+                <p><i class="fas fa-map-marker-alt"></i> 6610 W 109th Pl, Broomfield, CO 80020</p>
                 <button onclick="navigateTo('contact')" class="btn btn-warning footer-cta">BOOK NOW</button>
             </div>
         </div>
         <div class="footer-bottom">
             <div class="container bottom-content">
-                <p>&copy; 2024 PT’s Window Cleaning. All Rights Reserved.</p>
+                <p>&copy; 2026 PT’s Window Cleaning. All Rights Reserved.</p>
                 <p class="branding-line">Made with ❤️ by <a href="https://lonarx.us/" target="_blank">lonarx.us</a></p>
             </div>
         </div>
@@ -1899,7 +1995,7 @@
         <div class="chatbot-header">
             <div>
                 <strong>PT’s Window Cleaning Assistant</strong>
-                <div style="font-size: 0.75rem; opacity: 0.8;">Online 06:30 – 19:00</div>
+                <div style="font-size: 0.75rem; opacity: 0.8;">Online 7 AM to 6 PM Denver Time</div>
             </div>
             <button class="chatbot-close" onclick="toggleChatbot()">
                 <i class="fas fa-times"></i>
@@ -2333,7 +2429,7 @@
             }
 
             if (message.includes('hour') || message.includes('time') || message.includes('available')) {
-                return "We're available Monday-Saturday, 8AM-6PM. However, you can book appointments online 06:30 – 19:00! We also offer emergency services - just give us a call at (720) 556-1588.";
+                return "We're available Sunday to Saturday 7 AM - 6 PM Denver Time. However, you can book appointments online 7 AM to 6 PM Denver Time!";
             }
 
         }
