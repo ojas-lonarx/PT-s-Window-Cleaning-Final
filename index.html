@@ -5,18 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="PT’s Window Cleaning - Reliable window washing, glass care, and cleaning in Broomfield, Arvada, Thornton, Lafayette, Westminster, Boulder, Erie, Superior, and Northglenn, CO, USA. Book online 7 AM to 6 PM Denver Time. 5-Star Rated. Call +1 (720) 556-1588 for a free quote.">
+        content="PT’s Window Cleaning - Reliable window washing, glass care, and cleaning in Broomfield, Arvada, Thornton, Lafayette, Westminster, Boulder, Erie, Superior, and Northglenn, CO, USA. 5-Star Rated. Call +1 (720) 556-1588 for a free quote.">
     <meta name="keywords"
-        content="Broomfield, Arvada, Thornton, Lafayette, Westminster, Boulder, Erie, Superior, Northglenn, Window Cleaning, PT’s Window Cleaning, Residential Window Cleaning, Interior and exterior window cleaning, Online Booking Broomfield, 5-Star Window Cleaners">
+        content="Broomfield, Arvada, Thornton, Lafayette, Westminster, Boulder, Erie, Superior, Northglenn, Window Cleaning, PT’s Window Cleaning, Residential Window Cleaning, Interior and exterior window cleaning, 5-Star Window Cleaners">
     <meta name="author" content="PT’s Window Cleaning">
     <meta property="og:title"
-        content="PT’s Window Cleaning | Broomfield, Arvada, Thornton, Lafayette, Westminster, Boulder, Erie, Superior, Northglenn - Book Online">
+        content="PT’s Window Cleaning | Broomfield, Arvada, Thornton, Lafayette, Westminster, Boulder, Erie, Superior, Northglenn">
     <meta property="og:description"
-        content="Professional window cleaning services in Broomfield, Arvada, Thornton, Lafayette, Westminster, Boulder, Erie, Superior, and Northglenn. Book online 7 AM to 6 PM Denver Time. Licensed & 5-star rated.">
+        content="Professional window cleaning services in Broomfield, Arvada, Thornton, Lafayette, Westminster, Boulder, Erie, Superior, and Northglenn. Licensed & 5-star rated.">
     <meta property="og:type" content="website">
     <title>PT’s Window Cleaning | Broomfield, Arvada, Thornton, Lafayette, Westminster,
         Boulder, Erie, Superior,
-        Northglenn - Book Online 7 AM to 6 PM Denver Time</title>
+        Northglenn</title>
     <link rel="icon" type="image/png" href="logo.png">
 
     <!-- Fonts, Icons & EmailJS -->
@@ -258,13 +258,42 @@
 
         /* --- 5. HOME HERO --- */
         .hero {
-            background: linear-gradient(135deg, rgba(30, 58, 138, 0.92), rgba(30, 64, 175, 0.8)), url('https://images.pexels.com/photos/31435403/pexels-photo-31435403.jpeg?auto=format&fit=crop&q=80');
-            background-size: cover;
-            background-position: center;
+            position: relative;
             color: white;
             padding: 160px 0 120px;
             text-align: center;
             clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+            overflow: hidden;
+            background: #0f172a url('img/IMG_3707.jpg') no-repeat center center / cover; /* Robust Fallback */
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: 1;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            pointer-events: none;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(15, 73, 108, 0.85), rgba(11, 55, 82, 0.75));
+            z-index: 2;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 3;
         }
 
         .hero h1 {
@@ -427,111 +456,6 @@
             letter-spacing: 1px;
         }
 
-        /* --- 9. BOOKING CALENDAR --- */
-        .calendar-container {
-            background: white;
-            padding: 40px;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow-lg);
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .calendar-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 30px;
-            min-width: 280px;
-        }
-
-        .calendar-nav {
-            background: var(--primary);
-            color: white;
-            border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 1.2rem;
-        }
-
-        .calendar-display {
-            overflow-x: auto;
-            /* Prevent layout breakage */
-            padding-bottom: 10px;
-        }
-
-        .calendar-grid {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 10px;
-            margin-bottom: 30px;
-            min-width: 280px;
-        }
-
-        .calendar-day {
-            text-align: center;
-            font-weight: 600;
-            color: var(--text-muted);
-            padding: 10px;
-            font-size: 0.85rem;
-        }
-
-        .calendar-date {
-            aspect-ratio: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s;
-            background: var(--bg-body);
-            font-weight: 600;
-        }
-
-        .calendar-date:hover:not(.disabled) {
-            background: var(--primary);
-            color: white;
-        }
-
-        .calendar-date.selected {
-            background: var(--secondary);
-            color: white;
-        }
-
-        .calendar-date.disabled {
-            opacity: 0.3;
-            cursor: not-allowed;
-        }
-
-        .time-slots {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-            gap: 10px;
-        }
-
-        .time-slot {
-            padding: 12px;
-            border: 2px solid #e2e8f0;
-            border-radius: 8px;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-weight: 600;
-        }
-
-        .time-slot:hover {
-            border-color: var(--primary);
-            background: var(--primary);
-            color: white;
-        }
-
-        .time-slot.selected {
-            background: var(--secondary);
-            border-color: var(--secondary);
-            color: white;
-        }
 
         /* --- 10. AI CHATBOT --- */
         .chatbot-window {
@@ -705,6 +629,63 @@
             outline: none;
             border-color: var(--primary);
             background: white;
+        }
+
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 12px;
+            margin-top: 5px;
+        }
+
+        .checkbox-item {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px 10px;
+            background: #2a2a3e;
+            border: 2px solid #3a3a4e;
+            border-radius: 12px;
+            color: #e2e8f0;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            user-select: none;
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            position: absolute;
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .checkbox-item:hover {
+            border-color: var(--secondary);
+            background: rgba(240, 176, 0, 0.05);
+            transform: translateY(-2px);
+        }
+
+        /* Checked State */
+        .checkbox-item:has(input:checked) {
+            background: var(--secondary);
+            border-color: var(--secondary);
+            color: #000 !important;
+            box-shadow: 0 4px 12px rgba(240, 176, 0, 0.3);
+        }
+
+        .checkbox-item:has(input:checked) span {
+            color: #000 !important;
+        }
+
+        .checkbox-item:has(input:checked)::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            margin-right: 8px;
+            font-size: 0.9rem;
         }
 
         /* --- 12. STICKY BUTTONS (3 BUTTONS ALIGNED) --- */
@@ -1254,7 +1235,6 @@
                 <li class="nav-link" onclick="navigateTo('services')">Services</li>
                 <li class="nav-link" onclick="navigateTo('portfolio')">Portfolio</li>
                 <li class="nav-link" onclick="navigateTo('reviews')">Reviews</li>
-                <li class="nav-link" onclick="navigateTo('booking')">Book Online</li>
                 <li class="nav-link" onclick="navigateTo('faqs')">FAQs</li>
                 <li><button onclick="navigateTo('contact')" class="btn btn-primary"
                         style="padding: 10px 24px; font-size: 0.85rem; border-radius: 8px;">Free Estimate</button></li>
@@ -1268,6 +1248,10 @@
     <!-- 1. HOME PAGE -->
     <section id="home" class="page-section active">
         <div class="hero">
+            <video autoplay muted loop playsinline poster="img/IMG_3707.jpg" class="hero-video">
+                <source src="img/bg.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
             <div class="container">
                 <div class="badge">
                     <i class="fas fa-star" style="color: #fbbf24;"></i> 5-Star Google Rated in Colorodo, USA
@@ -1277,8 +1261,8 @@
                     high-quality
                     window washing for your home and business.</p>
                 <div style="margin-top: 35px;">
-                    <button onclick="navigateTo('booking')" class="btn btn-primary" style="margin-right: 15px;">Book
-                        Online Now</button>
+                    <button onclick="navigateTo('contact')" class="btn btn-primary" style="margin-right: 15px;">Get a
+                        Free Estimate</button>
                     <a href="tel:7205561588" class="btn btn-outline">Call +1 (720) 556-1588</a>
                 </div>
             </div>
@@ -1366,8 +1350,7 @@
                     home?</h3>
                 <p style="margin-bottom: 30px; color: var(--text-muted); font-size: 1.1rem;">Get professional and
                     reliable service, start to finish.</p>
-                <button onclick="navigateTo('contact')" class="btn btn-primary" style="margin-right: 15px;">Book an
-                    Appointment</button>
+                <button onclick="navigateTo('contact')" class="btn btn-primary" style="margin-right: 15px;">Get a Free Estimate</button>
                 <button onclick="navigateTo('services')" class="btn btn-outline"
                     style="border-color: var(--primary); color: var(--primary);">Explore Services</button>
             </div>
@@ -1379,8 +1362,7 @@
         <div class="section-padding container">
             <div class="about-grid">
                 <div class="about-img">
-                    <img src="https://images.pexels.com/photos/18885426/pexels-photo-18885426.jpeg?auto=format&fit=crop&q=80"
-                        alt="cleaning tools">
+                    <img src="img/IMG_3706.jpg" alt="PT's Professional Window Cleaning Team">
                 </div>
                 <div>
                     <div class="section-header" style="text-align: left; margin-bottom: 30px;">
@@ -1464,7 +1446,7 @@
             </div>
 
             <div class="text-center" style="margin-top: 60px;">
-                <button onclick="navigateTo('contact')" class="btn btn-primary">Book a Service Online</button>
+                <button onclick="navigateTo('contact')" class="btn btn-primary">Get a Free Estimate</button>
             </div>
         </div>
     </section>
@@ -1481,33 +1463,27 @@
 
             <div class="gallery-grid">
                 <a href="javascript:void(0)" class="gallery-item">
-                    <img src="https://images.pexels.com/photos/16898981/pexels-photo-16898981.jpeg?auto=format&fit=crop&q=80"
-                        alt="Window Washing Project">
+                    <img src="img/IMG_3709.JPEG" alt="Professional Window Cleaning Project">
                     <div class="gallery-overlay"><span>View Project</span></div>
                 </a>
                 <a href="javascript:void(0)" class="gallery-item">
-                    <img src="https://images.pexels.com/photos/9462107/pexels-photo-9462107.jpeg?auto=format&fit=crop&q=80"
-                        alt="Commercial window cleaning Work">
+                    <img src="img/IMG_3707.JPG" alt="Professional Window Cleaning Project">
                     <div class="gallery-overlay"><span>View Project</span></div>
                 </a>
                 <a href="javascript:void(0)" class="gallery-item">
-                    <img src="https://images.pexels.com/photos/34023076/pexels-photo-34023076.jpeg?auto=format&fit=crop&q=80"
-                        alt="Installation">
+                    <img src="img/IMG_3578.JPEG" alt="Professional Window Cleaning Project">
                     <div class="gallery-overlay"><span>View Project</span></div>
                 </a>
                 <a href="javascript:void(0)" class="gallery-item">
-                    <img src="https://images.pexels.com/photos/31435403/pexels-photo-31435403.jpeg?auto=format&fit=crop&q=80"
-                        alt="Glass Care Maintenance">
+                    <img src="img/IMG_3569.JPEG" alt="Professional Window Cleaning Project">
                     <div class="gallery-overlay"><span>View Project</span></div>
                 </a>
                 <a href="javascript:void(0)" class="gallery-item">
-                    <img src="https://images.pexels.com/photos/634007/pexels-photo-634007.jpeg?auto=format&fit=crop&q=80"
-                        alt="Electrical Fixtures">
+                    <img src="img/IMG_3553.JPEG" alt="Professional Window Cleaning Project">
                     <div class="gallery-overlay"><span>View Project</span></div>
                 </a>
                 <a href="javascript:void(0)" class="gallery-item">
-                    <img src="https://images.pexels.com/photos/4440537/pexels-photo-4440537.jpeg?auto=format&fit=crop&q=80"
-                        alt="Paint and Track Cleaning">
+                    <img src="img/IMG_3542.JPEG" alt="Professional Window Cleaning Project">
                     <div class="gallery-overlay"><span>View Project</span></div>
                 </a>
             </div>
@@ -1516,7 +1492,7 @@
                 style="margin-top: 60px; text-align: center; background: white; padding: 50px; border-radius: var(--radius); box-shadow: var(--shadow-lg);">
                 <h3 style="margin-bottom: 20px; color: var(--primary-dark); font-size: 1.8rem;">Like what you see?</h3>
                 <p style="margin-bottom: 30px; color: var(--text-muted);">Let's bring your next project to life.</p>
-                <button onclick="navigateTo('contact')" class="btn btn-primary">Book Now</button>
+                <button onclick="navigateTo('contact')" class="btn btn-primary">Get Started</button>
             </div>
         </div>
     </section>
@@ -1587,28 +1563,6 @@
         </div>
     </section>
 
-    <!-- 6. BOOK ONLINE PAGE -->
-    <section id="booking" class="page-section">
-        <div class="section-padding container">
-            <div class="section-header">
-                <h2>Book Your Service Online</h2>
-                <div class="divider"></div>
-                <p style="margin-top: 15px; color: var(--text-muted);">Schedule your window cleaning appointment
-                    instantly. Our booking system is available 7 AM to 6 PM Denver Time.</p>
-            </div>
-
-            <div
-                style="background: white; padding: 40px; border-radius: var(--radius); box-shadow: var(--shadow-lg); max-width: 800px; margin: 40px auto;">
-                <!-- Calendly inline widget begin -->
-                <div class="calendly-inline-widget"
-                    data-url="https://calendly.com/ptswindowcleaning/new-meeting?hide_event_type_details=1&hide_gdpr_banner=1&text_color=#ffffff&primary_color=0f496c"
-                    style="min-width:320px;height:700px;"></div>
-                <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js"
-                    async></script>
-                <!-- Calendly inline widget end -->
-            </div>
-        </div>
-    </section>
 
     <!-- 7. CONTACT PAGE -->
     <section id="contact" class="page-section">
@@ -1616,7 +1570,9 @@
             <div class="section-header">
                 <h2>Get In Touch</h2>
                 <div class="divider"></div>
-                <p style="margin-top: 10px; color: var(--text-muted);">Have questions? We're here to help!</p>
+                <p style="margin-top: 10px; color: var(--text-muted);">Ready for crystal clear views? Request your free,
+                    no-obligation estimate today by filling out the form below. Our professional team is ready to
+                    provide top-quality window cleaning for your home or business.</p>
             </div>
 
             <div class="contact-wrapper">
@@ -1652,9 +1608,7 @@
                         <i class="fas fa-clock"></i>
                         <div>
                             <strong>Hours</strong><br>
-                            <span style="color: rgba(255,255,255,0.8);">Mon-Sun: 7 AM - 6 PM Denver Time<br>Online
-                                Booking:
-                                7 AM to 6 PM Denver Time</span>
+                            <span style="color: rgba(255,255,255,0.8);">Mon-Sun: 7 AM - 6 PM Denver Time</span>
                         </div>
                     </div>
 
@@ -1700,35 +1654,15 @@
                         <!-- Number of Window Panes -->
                         <div class="form-group">
                             <label class="form-label" style="color: #e2e8f0;">Number of Window PANES *</label>
-                            <select id="contactPanes" class="form-control" required
-                                style="background: #2a2a3e; border-color: #3a3a4e; color: white; appearance: auto;">
-                                <option value="" style="color: #999;">Select...</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8+">8+</option>
-                            </select>
+                            <input type="number" id="contactPanes" class="form-control" required min="0" max="500"
+                                placeholder="0" style="background: #2a2a3e; border-color: #3a3a4e; color: white;">
                         </div>
                         <!-- Row: Number of Screens + Time Since Last Cleaning -->
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-bottom: 25px;">
                             <div class="form-group" style="margin-bottom: 0;">
                                 <label class="form-label" style="color: #e2e8f0;">Number of Screens</label>
-                                <select id="contactScreens" class="form-control"
-                                    style="background: #2a2a3e; border-color: #3a3a4e; color: white; appearance: auto;">
-                                    <option value="" style="color: #999;">Select...</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8+">8+</option>
-                                </select>
+                                <input type="number" id="contactScreens" class="form-control" min="0" max="500"
+                                    placeholder="0" style="background: #2a2a3e; border-color: #3a3a4e; color: white;">
                             </div>
                             <div class="form-group" style="margin-bottom: 0;">
                                 <label class="form-label" style="color: #e2e8f0;">Time Since Last Cleaning</label>
@@ -1740,22 +1674,16 @@
                         <!-- Row: Screen Cleaning + Track Cleaning (add-ons) -->
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-bottom: 8px;">
                             <div class="form-group" style="margin-bottom: 0;">
-                                <label class="form-label" style="color: #e2e8f0;">Window Screen Cleaning</label>
-                                <select id="contactScreenCleaning" class="form-control"
-                                    style="background: #2a2a3e; border-color: #3a3a4e; color: white; appearance: auto;">
-                                    <option value="" style="color: #999;">Select...</option>
-                                    <option value="Yes">Yes</option>
-                                    <option value="No">No</option>
-                                </select>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" id="contactScreenCleaning" value="Yes">
+                                    <span>Window Screen Cleaning</span>
+                                </label>
                             </div>
                             <div class="form-group" style="margin-bottom: 0;">
-                                <label class="form-label" style="color: #e2e8f0;">Window Track Cleaning</label>
-                                <select id="contactTrackCleaning" class="form-control"
-                                    style="background: #2a2a3e; border-color: #3a3a4e; color: white; appearance: auto;">
-                                    <option value="" style="color: #999;">Select...</option>
-                                    <option value="Yes">Yes</option>
-                                    <option value="No">No</option>
-                                </select>
+                                <label class="checkbox-item">
+                                    <input type="checkbox" id="contactTrackCleaning" value="Yes">
+                                    <span>Window Track Cleaning</span>
+                                </label>
                             </div>
                         </div>
                         <p style="font-size: 0.78rem; color: #94a3b8; margin-bottom: 22px; text-align: center;">
@@ -1763,51 +1691,53 @@
                                 style="color: var(--secondary); margin-right: 4px;"></i>
                             Additional charges may apply for screen &amp; track cleaning.
                         </p>
-                        <!-- Row: Property Style + Cleaning Style -->
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-bottom: 25px;">
-                            <div class="form-group" style="margin-bottom: 0;">
-                                <label class="form-label" style="color: #e2e8f0;">Property Style</label>
-                                <select id="contactPropertyStyle" class="form-control"
-                                    style="background: #2a2a3e; border-color: #3a3a4e; color: white; appearance: auto;">
-                                    <option value="" style="color: #999;">Select...</option>
-                                    <option value="Ranch">Ranch</option>
-                                    <option value="1 Story Building">1 Story Building</option>
-                                    <option value="2 Story Building">2 Story Building</option>
-                                    <option value="3 Story Building">3 Story Building</option>
-                                </select>
+                        <!-- Selection: Property Style -->
+                        <div class="form-group">
+                            <label class="form-label" style="color: #e2e8f0;">Property Style</label>
+                            <div class="checkbox-group" id="propertyStyles">
+                                <label class="checkbox-item"><input type="checkbox" name="propertyStyle" value="Ranch">
+                                    Ranch</label>
+                                <label class="checkbox-item"><input type="checkbox" name="propertyStyle"
+                                        value="1 Story"> 1 Story</label>
+                                <label class="checkbox-item"><input type="checkbox" name="propertyStyle"
+                                        value="2 Story"> 2 Story</label>
+                                <label class="checkbox-item"><input type="checkbox" name="propertyStyle"
+                                        value="3 Story+"> 3 Story+</label>
                             </div>
-                            <div class="form-group" style="margin-bottom: 0;">
-                                <label class="form-label" style="color: #e2e8f0;">Cleaning Style</label>
-                                <select id="contactCleaningStyle" class="form-control"
-                                    style="background: #2a2a3e; border-color: #3a3a4e; color: white; appearance: auto;">
-                                    <option value="" style="color: #999;">Select...</option>
-                                    <option value="Interior">Interior</option>
-                                    <option value="Exterior">Exterior</option>
-                                    <option value="Both">Both (Interior &amp; Exterior)</option>
-                                </select>
+                        </div>
+
+                        <!-- Selection: Cleaning Style -->
+                        <div class="form-group">
+                            <label class="form-label" style="color: #e2e8f0;">Cleaning Style</label>
+                            <div class="checkbox-group" id="cleaningStyles">
+                                <label class="checkbox-item"><input type="checkbox" name="cleaningStyle"
+                                        value="Interior"> Interior</label>
+                                <label class="checkbox-item"><input type="checkbox" name="cleaningStyle"
+                                        value="Exterior"> Exterior</label>
                             </div>
                         </div>
                         <!-- Service Type -->
                         <div class="form-group">
                             <label class="form-label" style="color: #e2e8f0;">Service Type</label>
-                            <select id="contactService" class="form-control"
-                                style="background: #2a2a3e; border-color: #3a3a4e; color: white; appearance: auto;">
-                                <option value="" style="color: #999;">Select service...</option>
-                                <option value="Commercial window cleaning">Commercial window cleaning</option>
-                                <option value="Glass and mirror cleaning">Glass and mirror cleaning</option>
-                                <option value="Window washing">Window washing</option>
-                                <option value="Residential window cleaning">Residential window cleaning</option>
-                                <option value="Interior and exterior window cleaning">Interior and exterior window
-                                    cleaning</option>
-                                <option value="Rooftop / skylight cleaning">Rooftop / skylight cleaning</option>
-                            </select>
+                            <div class="checkbox-group" id="serviceTypes">
+                                <label class="checkbox-item"><input type="checkbox" name="serviceType"
+                                        value="Residential"> Residential</label>
+                                <label class="checkbox-item"><input type="checkbox" name="serviceType"
+                                        value="Commercial"> Commercial</label>
+                                <label class="checkbox-item"><input type="checkbox" name="serviceType"
+                                        value="Glass/Mirror"> Glass/Mirror</label>
+                                <label class="checkbox-item"><input type="checkbox" name="serviceType"
+                                        value="Skylight/Roof"> Skylight/Roof</label>
+                                <label class="checkbox-item"><input type="checkbox" name="serviceType"
+                                        value="Screens/Tracks"> Screens/Tracks</label>
+                            </div>
                         </div>
                         <!-- Message (optional) -->
                         <div class="form-group">
                             <label class="form-label" style="color: #e2e8f0;">Your Message <span
                                     style="color:#94a3b8; font-weight:400;">(optional)</span></label>
                             <textarea id="contactMessage" class="form-control" rows="4"
-                                placeholder="Tell us about your windows, building, or cleaning needs..."
+                                placeholder="Tell us about your windows, building, or cleaning needs... (e.g., 10 double-hung windows, 2 sliding doors, 2-story home)"
                                 style="background: #2a2a3e; border-color: #3a3a4e; color: white; resize: vertical;"></textarea>
                         </div>
                         <!-- Disclaimer -->
@@ -1862,9 +1792,7 @@
                         hours?</h3>
                     <p style="color: var(--text-muted); line-height: 1.6;">Our working hours are 7 AM to 6 PM
                         Denver Time
-                        daily (Sunday to Saturday). Use our online booking system to
-                        schedule at your convenience or
-                        call +1 (720) 556-1588.</p>
+                        daily (Sunday to Saturday).</p>
                 </div>
 
                 <!-- FAQ Item 4 -->
@@ -1968,7 +1896,6 @@
                     <li><span class="footer-link" onclick="navigateTo('services')">Services</span></li>
                     <li><span class="footer-link" onclick="navigateTo('portfolio')">Portfolio</span></li>
                     <li><span class="footer-link" onclick="navigateTo('reviews')">Reviews</span></li>
-                    <li><span class="footer-link" onclick="navigateTo('booking')">Book Online</span></li>
                     <li><span class="footer-link" onclick="navigateTo('faqs')">FAQs</span></li>
                 </ul>
             </div>
@@ -1991,7 +1918,7 @@
                 <p><i class="fas fa-envelope"></i> ptorres2824@gmail.com</p>
                 <p><i class="fas fa-map-marker-alt"></i> 6610 W 109th Pl, Westminster, CO 80020, US</p>
                 <p><i class="fas fa-clock"></i> 7 AM to 6 PM Denver Time</p>
-                <button onclick="navigateTo('contact')" class="btn btn-warning footer-cta">BOOK NOW</button>
+                <button onclick="navigateTo('contact')" class="btn btn-warning footer-cta">FREE ESTIMATE</button>
             </div>
         </div>
         <div class="footer-bottom">
@@ -2021,9 +1948,9 @@
                         <button onclick="askBot('What services do you offer?')"
                             style="background: var(--bg-body); border: none; padding: 10px; border-radius: 8px; cursor: pointer; text-align: left; font-size: 0.85rem;">📋
                             What services do you offer?</button>
-                        <button onclick="askBot('How do I book an appointment?')"
+                        <button onclick="askBot('How do I get an estimate?')"
                             style="background: var(--bg-body); border: none; padding: 10px; border-radius: 8px; cursor: pointer; text-align: left; font-size: 0.85rem;">📅
-                            How do I book?</button>
+                            How do I get an estimate?</button>
                         <button onclick="askBot('What are your rates?')"
                             style="background: var(--bg-body); border: none; padding: 10px; border-radius: 8px; cursor: pointer; text-align: left; font-size: 0.85rem;">💰
                             What are your rates?</button>
@@ -2068,23 +1995,13 @@
         <button class="nav-btn mobile-link" data-target="portfolio" onclick="navigateTo('portfolio')">
             <i class="fas fa-images" aria-hidden="true"></i>Portfolio
         </button>
-        <button class="nav-btn mobile-link" data-target="booking" onclick="navigateTo('booking')">
-            <i class="fas fa-calendar-check" aria-hidden="true"></i>Book
+        <button class="nav-btn mobile-link" data-target="contact" onclick="navigateTo('contact')">
+            <i class="fas fa-envelope" aria-hidden="true"></i>Contact
         </button>
     </nav>
 
     <!-- JAVASCRIPT -->
     <script>
-        // Global booking state
-        let bookingData = {
-            service: null,
-            price: 0,
-            date: null,
-            time: null
-        };
-
-        let currentMonth = new Date().getMonth();
-        let currentYear = new Date().getFullYear();
 
         // Main Navigation Function
         function navigateTo(pageId) {
@@ -2112,7 +2029,6 @@
                     (pageId === 'home' && linkText === 'home') ||
                     (pageId === 'about' && linkText.includes('about')) ||
                     (pageId === 'services' && linkText === 'services') ||
-                    (pageId === 'booking' && linkText.includes('book')) ||
                     (pageId === 'reviews' && linkText === 'reviews') ||
                     (pageId === 'contact' && linkText.includes('contact'))) {
                     link.classList.add('active');
@@ -2124,202 +2040,19 @@
                 link.classList.remove('active');
                 const linkText = link.textContent.toLowerCase().trim();
                 if (linkText.includes(pageId) ||
-                    (pageId === 'home' && linkText === 'home') ||
-                    (pageId === 'booking' && linkText === 'book')) {
+                    (pageId === 'home' && linkText === 'home')) {
                     link.classList.add('active');
                 }
             });
 
             // Close mobile menu if open
             document.getElementById('navMenu').classList.remove('active');
-
-            // Initialize calendar if booking page
-            if (pageId === 'booking') {
-                setTimeout(() => renderCalendar(), 100);
-            }
         }
 
         function toggleMenu() {
             document.getElementById('navMenu').classList.toggle('active');
         }
 
-        // Service Selection
-        function selectService(serviceName, price, event) {
-            bookingData.service = serviceName;
-            bookingData.price = price;
-
-            // Reset all service options
-            document.querySelectorAll('.service-option label').forEach(label => {
-                label.style.borderColor = '#e2e8f0';
-                label.style.background = 'white';
-            });
-
-            // Highlight selected option
-            const currentLabel = event.currentTarget.querySelector('label');
-            currentLabel.style.borderColor = 'var(--primary)';
-            currentLabel.style.background = '#eff6ff';
-
-            updateSummary();
-        }
-
-        // Calendar Functions
-        function renderCalendar() {
-            const monthNames = ["January", "February", "March", "April", "May", "June",
-                "July", "August", "September", "October", "November", "December"];
-
-            const monthElement = document.getElementById('calendarMonth');
-            if (monthElement) {
-                monthElement.textContent = monthNames[currentMonth] + ' ' + currentYear;
-            }
-
-            const firstDay = new Date(currentYear, currentMonth, 1).getDay();
-            const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
-
-            const grid = document.getElementById('calendarGrid');
-            if (!grid) return;
-
-            grid.innerHTML = '';
-
-            // Day headers
-            const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-            days.forEach(day => {
-                const dayEl = document.createElement('div');
-                dayEl.className = 'calendar-day';
-                dayEl.textContent = day;
-                grid.appendChild(dayEl);
-            });
-
-            // Empty cells
-            for (let i = 0; i < firstDay; i++) {
-                grid.appendChild(document.createElement('div'));
-            }
-
-            // Date cells
-            const today = new Date();
-            today.setHours(0, 0, 0, 0);
-
-            for (let date = 1; date <= daysInMonth; date++) {
-                const dateEl = document.createElement('div');
-                dateEl.className = 'calendar-date';
-                dateEl.textContent = date;
-
-                const cellDate = new Date(currentYear, currentMonth, date);
-                cellDate.setHours(0, 0, 0, 0);
-
-                if (cellDate < today) {
-                    dateEl.classList.add('disabled');
-                } else {
-                    dateEl.onclick = function () { selectDate(date); };
-                }
-
-                grid.appendChild(dateEl);
-            }
-        }
-
-        function changeMonth(direction) {
-            currentMonth += direction;
-            if (currentMonth > 11) {
-                currentMonth = 0;
-                currentYear++;
-            } else if (currentMonth < 0) {
-                currentMonth = 11;
-                currentYear--;
-            }
-            renderCalendar();
-        }
-
-        function selectDate(date) {
-            bookingData.date = `${currentMonth + 1}/${date}/${currentYear}`;
-
-            document.querySelectorAll('.calendar-date').forEach(el => el.classList.remove('selected'));
-            event.currentTarget.classList.add('selected');
-
-            // Show time slots
-            document.getElementById('timeSlots').style.display = 'block';
-            renderTimeSlots();
-            updateSummary();
-        }
-
-        function renderTimeSlots() {
-            const container = document.getElementById('timeSlotsContainer');
-            if (!container) return;
-
-            const times = ['9:00 AM', '10:00 AM', '11:00 AM', '1:00 PM', '2:00 PM', '3:00 PM', '4:00 PM'];
-
-            container.innerHTML = '';
-            times.forEach(time => {
-                const slot = document.createElement('div');
-                slot.className = 'time-slot';
-                slot.textContent = time;
-                slot.onclick = function () { selectTime(time); };
-                container.appendChild(slot);
-            });
-        }
-
-        function selectTime(time) {
-            bookingData.time = time;
-
-            document.querySelectorAll('.time-slot').forEach(el => el.classList.remove('selected'));
-            event.currentTarget.classList.add('selected');
-
-            updateSummary();
-        }
-
-        function updateSummary() {
-            const serviceEl = document.getElementById('summaryService');
-            const dateTimeEl = document.getElementById('summaryDateTime');
-            const priceEl = document.getElementById('summaryPrice');
-
-            if (serviceEl) {
-                serviceEl.textContent = bookingData.service || 'Not selected';
-            }
-
-            if (dateTimeEl) {
-                dateTimeEl.textContent = (bookingData.date && bookingData.time)
-                    ? `${bookingData.date} at ${bookingData.time}`
-                    : 'Not selected';
-            }
-
-            if (priceEl) {
-                const deposit = bookingData.price * 0.5;
-                priceEl.textContent = bookingData.price ? `$${deposit.toFixed(2)}` : '$0';
-            }
-        }
-
-        // Form Submissions
-        function submitBooking(e) {
-            e.preventDefault();
-
-            if (!bookingData.service || !bookingData.date || !bookingData.time) {
-                showToast('Please select service, date, and time', 'error');
-                return;
-            }
-
-            const btn = e.target.querySelector('button[type="submit"]');
-            const originalText = btn.innerHTML;
-
-            btn.innerHTML = '<span class="loading"></span> Processing...';
-            btn.disabled = true;
-
-            // Simulate payment & booking
-            setTimeout(() => {
-                showToast('Booking confirmed! Check your email for details.', 'success');
-
-                // Send automated email (simulated)
-                sendAutomatedEmail();
-
-                // Reset form
-                e.target.reset();
-                bookingData = { service: null, price: 0, date: null, time: null };
-                updateSummary();
-
-                btn.innerHTML = originalText;
-                btn.disabled = false;
-
-                // Redirect to home
-                setTimeout(() => navigateTo('home'), 2000);
-            }, 2000);
-        }
 
         // EmailJS Configuration
         const EMAILJS_PUBLIC_KEY = 'S2xvM89kU_5MW2ads';
@@ -2338,12 +2071,26 @@
             btn.innerHTML = '<span class="loading"></span> Sending...';
             btn.disabled = true;
 
+            // Collect Checked Values
+            const getCheckedValues = (name) => {
+                return Array.from(document.querySelectorAll(`input[name="${name}"]:checked`))
+                    .map(el => el.value)
+                    .join(', ');
+            };
+
             const templateParams = {
                 from_name: document.getElementById('contactName').value,
                 from_email: document.getElementById('contactEmail').value,
                 phone: document.getElementById('contactPhone').value || 'Not provided',
-                number_of_windows: document.getElementById('contactWindows').value || 'Not specified',
-                service_type: document.getElementById('contactService').value || 'Not specified',
+                address: document.getElementById('contactAddress').value || 'Not provided',
+                number_of_panes: document.getElementById('contactPanes').value || '0',
+                number_of_screens: document.getElementById('contactScreens').value || '0',
+                last_cleaned: document.getElementById('contactLastCleaned').value || 'Not specified',
+                screen_cleaning: document.getElementById('contactScreenCleaning').checked ? 'Yes' : 'No',
+                track_cleaning: document.getElementById('contactTrackCleaning').checked ? 'Yes' : 'No',
+                property_style: getCheckedValues('propertyStyle') || 'Not selected',
+                cleaning_style: getCheckedValues('cleaningStyle') || 'Not selected',
+                service_type: getCheckedValues('serviceType') || 'Not selected',
                 message: document.getElementById('contactMessage').value,
             };
 
@@ -2429,19 +2176,19 @@
             message = message.toLowerCase();
 
             if (message.includes('service') || message.includes('offer')) {
-                return "We offer Residential window cleaning, Commercial window cleaning, Window washing, Glass & mirror care, Screen cleaning, Track cleaning, and more! You can view all services on our Services page or book directly online.";
+                return "We offer Residential window cleaning, Commercial window cleaning, Window washing, Glass & mirror care, Screen cleaning, Track cleaning, and more! You can view all services on our Services page or contact us for an estimate.";
             }
 
             if (message.includes('book') || message.includes('appointment')) {
-                return "Booking is easy! Just click 'Book Online' in the menu, select your service, choose a date & time, and pay the deposit. You'll get instant confirmation via email!";
+                return "You can get a free estimate by clicking 'Free Estimate' in the menu or scrolling to the contact section!";
             }
 
             if (message.includes('rate') || message.includes('price') || message.includes('cost')) {
-                return "Our rates start at $75/hour for standard window cleaning. Specific services like Commercial window cleaning start at $120. You can see exact pricing when you select a service in our booking system!";
+                return "Our rates start at $75/hour for standard window cleaning. Specific services like Commercial window cleaning start at $120. You can get an exact quote by contacting us!";
             }
 
             if (message.includes('hour') || message.includes('time') || message.includes('available')) {
-                return "We're available Sunday to Saturday 7 AM - 6 PM Denver Time. However, you can book appointments online 7 AM to 6 PM Denver Time!";
+                return "We're available Sunday to Saturday 7 AM - 6 PM Denver Time!";
             }
 
         }
