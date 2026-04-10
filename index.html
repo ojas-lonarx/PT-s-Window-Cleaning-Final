@@ -264,7 +264,8 @@
             text-align: center;
             clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
             overflow: hidden;
-            background: #0f172a url('img/IMG_3707.jpg') no-repeat center center / cover; /* Robust Fallback */
+            background: #0f172a url('img/IMG_3707.jpg') no-repeat center center / cover;
+            /* Robust Fallback */
         }
 
         .hero-video {
@@ -1350,7 +1351,8 @@
                     home?</h3>
                 <p style="margin-bottom: 30px; color: var(--text-muted); font-size: 1.1rem;">Get professional and
                     reliable service, start to finish.</p>
-                <button onclick="navigateTo('contact')" class="btn btn-primary" style="margin-right: 15px;">Get a Free Estimate</button>
+                <button onclick="navigateTo('contact')" class="btn btn-primary" style="margin-right: 15px;">Get a Free
+                    Estimate</button>
                 <button onclick="navigateTo('services')" class="btn btn-outline"
                     style="border-color: var(--primary); color: var(--primary);">Explore Services</button>
             </div>
@@ -1873,6 +1875,28 @@
     </section>
 
     <!-- Footer -->
+    <!-- THANK YOU PAGE -->
+    <section id="thankyou" class="page-section">
+        <div class="section-padding container text-center">
+            <div style="background: white; padding: 60px 40px; border-radius: 20px; box-shadow: var(--shadow-lg); max-width: 600px; margin: 60px auto;">
+                <div style="width: 80px; height: 80px; background: var(--success); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; margin: 0 auto 30px;">
+                    <i class="fas fa-check"></i>
+                </div>
+                <h2 style="color: var(--primary-dark); margin-bottom: 20px;">Thank You for Choosing PT's!</h2>
+                <p style="color: var(--text-main); font-size: 1.1rem; margin-bottom: 30px;">
+                    We've received your request and will locate your property online for a fast quote. 
+                    Expect a response within <strong>5 to 10 minutes</strong> (during 7 AM - 6 PM business hours).
+                </p>
+                <div style="background: #f8fafc; padding: 20px; border-radius: 12px; margin-bottom: 35px; border: 1px dashed #cbd5e1;">
+                    <p style="font-size: 0.95rem; color: var(--text-muted); margin: 0;">
+                        A confirmation email has been sent to your inbox. Check your spam folder if you don't see it!
+                    </p>
+                </div>
+                <button onclick="navigateTo('home')" class="btn btn-primary" style="width: 100%;">Return to Home</button>
+            </div>
+        </div>
+    </section>
+
     <footer class="site-footer">
         <div class="container footer-grid">
             <div class="footer-col brand-col">
@@ -1928,6 +1952,7 @@
             </div>
         </div>
     </footer>
+    
 
     <!-- AI CHATBOT WINDOW -->
     <div class="chatbot-window" id="chatbotWindow">
@@ -2009,6 +2034,12 @@
             const sections = document.querySelectorAll('.page-section');
             sections.forEach(sec => sec.classList.remove('active'));
 
+            // Hide/Show Footer
+            const footer = document.querySelector('.site-footer');
+            if (footer) {
+                footer.style.display = pageId === 'thankyou' ? 'none' : 'block';
+            }
+
             // Show target section
             const targetSection = document.getElementById(pageId);
             if (targetSection) {
@@ -2071,38 +2102,81 @@
             btn.innerHTML = '<span class="loading"></span> Sending...';
             btn.disabled = true;
 
-            // Collect Checked Values
             const getCheckedValues = (name) => {
                 return Array.from(document.querySelectorAll(`input[name="${name}"]:checked`))
                     .map(el => el.value)
                     .join(', ');
             };
 
-            const templateParams = {
-                from_name: document.getElementById('contactName').value,
-                from_email: document.getElementById('contactEmail').value,
+            const data = {
+                name: document.getElementById('contactName').value,
+                email: document.getElementById('contactEmail').value,
                 phone: document.getElementById('contactPhone').value || 'Not provided',
                 address: document.getElementById('contactAddress').value || 'Not provided',
-                number_of_panes: document.getElementById('contactPanes').value || '0',
-                number_of_screens: document.getElementById('contactScreens').value || '0',
+                panes: document.getElementById('contactPanes').value || '0',
+                screens: document.getElementById('contactScreens').value || '0',
                 last_cleaned: document.getElementById('contactLastCleaned').value || 'Not specified',
                 screen_cleaning: document.getElementById('contactScreenCleaning').checked ? 'Yes' : 'No',
                 track_cleaning: document.getElementById('contactTrackCleaning').checked ? 'Yes' : 'No',
                 property_style: getCheckedValues('propertyStyle') || 'Not selected',
                 cleaning_style: getCheckedValues('cleaningStyle') || 'Not selected',
                 service_type: getCheckedValues('serviceType') || 'Not selected',
-                message: document.getElementById('contactMessage').value,
+                message: document.getElementById('contactMessage').value || 'No additional message',
+            };
+
+            // HTML Body for Owner Notification
+            const ownerHtml = `
+                <div style="font-family: Arial, sans-serif; max-width: 600px; color: #333;">
+                    <h2 style="color: #0f496c;">New Lead: Window Cleaning Estimate</h2>
+                    <p>You have a new service request from <strong>${data.name}</strong>.</p>
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <tr><td style="padding: 8px; border-bottom: 1px solid #eee;"><strong>Phone:</strong></td><td style="padding: 8px; border-bottom: 1px solid #eee;">${data.phone}</td></tr>
+                        <tr><td style="padding: 8px; border-bottom: 1px solid #eee;"><strong>Email:</strong></td><td style="padding: 8px; border-bottom: 1px solid #eee;">${data.email}</td></tr>
+                        <tr><td style="padding: 8px; border-bottom: 1px solid #eee;"><strong>Address:</strong></td><td style="padding: 8px; border-bottom: 1px solid #eee;">${data.address}</td></tr>
+                        <tr><td style="padding: 8px; border-bottom: 1px solid #eee;"><strong>Window Panes:</strong></td><td style="padding: 8px; border-bottom: 1px solid #eee;">${data.panes}</td></tr>
+                        <tr><td style="padding: 8px; border-bottom: 1px solid #eee;"><strong>Screens:</strong></td><td style="padding: 8px; border-bottom: 1px solid #eee;">${data.screens}</td></tr>
+                        <tr><td style="padding: 8px; border-bottom: 1px solid #eee;"><strong>Services:</strong></td><td style="padding: 8px; border-bottom: 1px solid #eee;">${data.service_type}</td></tr>
+                    </table>
+                    <p style="background: #f1f5f9; padding: 15px; border-radius: 8px; margin-top: 20px;"><strong>Message:</strong><br>${data.message}</p>
+                </div>
+            `;
+
+            const customerHtml = `
+                <div style="font-family: Arial, sans-serif; max-width: 600px; color: #333;">
+                    <h2 style="color: #0f496c;">We've received your request!</h2>
+                    <p>Hi ${data.name},</p>
+                    <p>Thank you for choosing <strong>PT's Window Cleaning</strong>. We've received your estimate request for <strong>${data.address}</strong>.</p>
+                    <p>Our team is usually able to provide a fast quote within 5 to 10 minutes. We'll be in touch soon!</p>
+                </div>
+            `;
+
+            const templateParams = {
+                from_name: data.name,
+                from_email: data.email,
+                phone: data.phone,
+                address: data.address,
+                number_of_panes: data.panes,
+                number_of_screens: data.screens,
+                last_cleaned: data.last_cleaned,
+                screen_cleaning: data.screen_cleaning,
+                track_cleaning: data.track_cleaning,
+                property_style: data.property_style,
+                cleaning_style: data.cleaning_style,
+                service_type: data.service_type,
+                message: data.message,
             };
 
             try {
-                // Send owner notification email
+                // 1. Send owner notification email
                 await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_OWNER_TEMPLATE, templateParams);
 
-                // Send customer auto-reply
-                await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_CUSTOMER_TEMPLATE, templateParams);
+                // 2. Send customer auto-reply (non-blocking)
+                emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_CUSTOMER_TEMPLATE, templateParams)
+                    .catch(err => console.error('Auto-reply error:', err));
 
                 showToast('Message sent! Check your email for confirmation.', 'success');
                 e.target.reset();
+                navigateTo('thankyou');
             } catch (error) {
                 console.error('EmailJS error:', error);
                 showToast('Failed to send message. Please call us directly.', 'error');
