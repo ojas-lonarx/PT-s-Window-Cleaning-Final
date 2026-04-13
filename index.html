@@ -377,15 +377,41 @@
         /* --- 7. ABOUT SECTION --- */
         .about-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 50px;
             align-items: center;
         }
 
-        .about-img {
-            border-radius: var(--radius);
+        .about-media {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .media-box {
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 20px 20px 0px var(--secondary);
+            box-shadow: var(--shadow-lg);
+            border: 3px solid white;
+            position: relative;
+            background: #000;
+            aspect-ratio: 9/16;
+        }
+
+        .media-box img,
+        .media-box video {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        .about-img-box {
+            transform: rotate(-3deg) translateY(10px);
+        }
+
+        .about-video-box {
+            transform: rotate(3deg) translateY(-10px);
         }
 
         .check-list {
@@ -1255,12 +1281,12 @@
             <div class="hero-overlay"></div>
             <div class="container">
                 <div class="badge">
-                    <i class="fas fa-star" style="color: #fbbf24;"></i> 5-Star Google Rated in Colorodo, USA
+                    <i class="fas fa-star" style="color: #fbbf24;"></i> 5-Star Google Rated in Colorado, USA
                 </div>
                 <h1>Professional Window Cleaning Services<br>Done Right.</h1>
-                <p>From interior to exterior windows, PT's Professional Window Cleaning Services LLC provides reliable,
-                    high-quality
-                    window washing for your home and business.</p>
+                <p>From interior to exterior windows, PT’s professional Window Cleaning services LLC is a fully licensed
+                    and fully insured Window Cleaning company that provides reliable, high-quality Window Cleaning for
+                    your home and business.</p>
                 <div style="margin-top: 35px;">
                     <button onclick="navigateTo('contact')" class="btn btn-primary" style="margin-right: 15px;">Get a
                         Free Estimate</button>
@@ -1363,8 +1389,16 @@
     <section id="about" class="page-section">
         <div class="section-padding container">
             <div class="about-grid">
-                <div class="about-img">
-                    <img src="img/IMG_3706.jpg" alt="PT's Professional Window Cleaning Team">
+                <div class="about-media">
+                    <div class="media-box about-img-box">
+                        <img src="img/IMG_3569.jpeg" alt="PT's Professional Window Cleaning Team">
+                    </div>
+                    <div class="media-box about-video-box">
+                        <video autoplay muted loop playsinline poster="img/IMG_3707.jpg">
+                            <source src="img/bg2.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
                 </div>
                 <div>
                     <div class="section-header" style="text-align: left; margin-bottom: 30px;">
@@ -1372,8 +1406,9 @@
                         <div class="divider" style="margin: 15px 0;"></div>
                     </div>
                     <p style="margin-bottom: 20px; font-size: 1.1rem; color: var(--text-main);">
-                        We are a locally owned and operated window cleaning business serving <strong>Broomfield, Arvada,
-                            Thornton, Lafayette, Westminster, Boulder, Erie, Superior, and Northglenn, Colorado</strong>
+                        We are a locally owned and operated window cleaning business serving <strong>Boulder, Erie,
+                            Lafayette, Louisville, Broomfield, Superior, Westminster, Thornton, Northglenn, and Arvada,
+                            Colorado</strong>
                         and the surrounding areas.
                     </p>
                     <p style="margin-bottom: 30px; color: var(--text-muted);">
@@ -1383,11 +1418,11 @@
                         with the utmost respect and care.
                     </p>
                     <ul class="check-list">
-                        <li><i class="fas fa-check"></i> Licensed & Professional</li>
+                        <li><i class="fas fa-check"></i> Professional, Fully licensed & Fully Insured</li>
                         <li><i class="fas fa-check"></i> 5-Star Customer Rating</li>
                         <li><i class="fas fa-check"></i> Transparent Pricing</li>
                         <li><i class="fas fa-check"></i> Punctual & Clean</li>
-                        <li><i class="fas fa-check"></i> Working Hours: 7 AM to 6 PM Denver Time</li>
+                        <li><i class="fas fa-check"></i> Working Hours: 7 AM to 7 PM Denver Time</li>
                         <li><i class="fas fa-check"></i> Secure Online Payments</li>
                     </ul>
                 </div>
@@ -1465,11 +1500,11 @@
 
             <div class="gallery-grid">
                 <a href="javascript:void(0)" class="gallery-item">
-                    <img src="img/IMG_3709.jpeg" alt="Professional Window Cleaning Project">
+                    <img src="img/IMG_1254.jpg" alt="Professional Window Cleaning Project">
                     <div class="gallery-overlay"><span>View Project</span></div>
                 </a>
                 <a href="javascript:void(0)" class="gallery-item">
-                    <img src="img/IMG_3707.jpg" alt="Professional Window Cleaning Project">
+                    <img src="img/IMG_9506.jpeg" alt="Professional Window Cleaning Project">
                     <div class="gallery-overlay"><span>View Project</span></div>
                 </a>
                 <a href="javascript:void(0)" class="gallery-item">
@@ -1593,16 +1628,17 @@
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
                             <strong>Location</strong><br>
-                            <span style="color: rgba(255,255,255,0.8);">Serving Broomfield, Arvada, Thornton, Lafayette,
-                                Westminster, Boulder, Erie, Superior, and Northglenn, CO, USA</span>
+                            <span style="color: rgba(255,255,255,0.8);">Serving Boulder, Erie, Lafayette, Louisville,
+                                Broomfield, Superior, Westminster, Thornton, Northglenn, and Arvada, CO, USA</span>
                         </div>
                     </div>
+
 
                     <div class="info-item">
                         <i class="fas fa-envelope"></i>
                         <div>
                             <strong>Email</strong><br>
-                            <span style="color: rgba(255,255,255,0.8);">ptorres2824@gmail.com</span>
+                            <span style="color: rgba(255,255,255,0.8);">ptswindowcleaning@gmail.com</span>
                         </div>
                     </div>
 
@@ -1655,8 +1691,8 @@
                         </div>
                         <!-- Number of Window Panes -->
                         <div class="form-group">
-                            <label class="form-label" style="color: #e2e8f0;">Number of Window PANES *</label>
-                            <input type="number" id="contactPanes" class="form-control" required min="0" max="500"
+                            <label class="form-label" style="color: #e2e8f0;">Number of Window PANES</label>
+                            <input type="number" id="contactPanes" class="form-control" min="0" max="500"
                                 placeholder="0" style="background: #2a2a3e; border-color: #3a3a4e; color: white;">
                         </div>
                         <!-- Row: Number of Screens + Time Since Last Cleaning -->
@@ -1749,6 +1785,8 @@
                             <em>Please note: The quotation provided is an approximate quote only and is subject to
                                 change based on an in-person site visit.</em>
                         </p>
+                        <p style="font-size: 0.82rem; color: #94a3b8; margin-bottom: 15px; text-align: center;">*
+                            represents mandatory fields</p>
                         <!-- Submit Button -->
                         <button type="submit" class="btn"
                             style="background: var(--secondary); color: #000; width: 100%; font-size: 1rem; font-weight: 700; padding: 18px; border-radius: 50px; letter-spacing: 1px; display: flex; align-items: center; justify-content: center; gap: 10px;">
@@ -1781,8 +1819,9 @@
                     <h3 style="color: var(--primary-dark); margin-bottom: 15px; font-size: 1.1rem;">What areas do you
                         serve?</h3>
                     <p style="color: var(--text-muted); line-height: 1.6;">We provide window cleaning services
-                        throughout Broomfield, Arvada, Thornton, Lafayette, Westminster, Boulder, Erie, Superior, and
-                        Northglenn, Colorado. For service areas outside these cities, please contact us to discuss
+                        throughout Boulder, Erie, Lafayette, Louisville, Broomfield, Superior, Westminster, Thornton,
+                        Northglenn, and Arvada, Colorado. For service areas outside these cities, please contact us to
+                        discuss
                         availability.</p>
                 </div>
 
@@ -1792,7 +1831,7 @@
                     <h3 style="color: var(--primary-dark); margin-bottom: 15px; font-size: 1.1rem;">What are your
                         working
                         hours?</h3>
-                    <p style="color: var(--text-muted); line-height: 1.6;">Our working hours are 7 AM to 6 PM
+                    <p style="color: var(--text-muted); line-height: 1.6;">Our working hours are 7 AM to 7 PM
                         Denver Time
                         daily (Sunday to Saturday).</p>
                 </div>
@@ -1878,21 +1917,25 @@
     <!-- THANK YOU PAGE -->
     <section id="thankyou" class="page-section">
         <div class="section-padding container text-center">
-            <div style="background: white; padding: 60px 40px; border-radius: 20px; box-shadow: var(--shadow-lg); max-width: 600px; margin: 60px auto;">
-                <div style="width: 80px; height: 80px; background: var(--success); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; margin: 0 auto 30px;">
+            <div
+                style="background: white; padding: 60px 40px; border-radius: 20px; box-shadow: var(--shadow-lg); max-width: 600px; margin: 60px auto;">
+                <div
+                    style="width: 80px; height: 80px; background: var(--success); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; margin: 0 auto 30px;">
                     <i class="fas fa-check"></i>
                 </div>
                 <h2 style="color: var(--primary-dark); margin-bottom: 20px;">Thank You for Choosing PT's!</h2>
                 <p style="color: var(--text-main); font-size: 1.1rem; margin-bottom: 30px;">
-                    We've received your request and will locate your property online for a fast quote. 
+                    We've received your request and will locate your property online for a fast quote.
                     Expect a response within <strong>5 to 10 minutes</strong> (during 7 AM - 6 PM business hours).
                 </p>
-                <div style="background: #f8fafc; padding: 20px; border-radius: 12px; margin-bottom: 35px; border: 1px dashed #cbd5e1;">
+                <div
+                    style="background: #f8fafc; padding: 20px; border-radius: 12px; margin-bottom: 35px; border: 1px dashed #cbd5e1;">
                     <p style="font-size: 0.95rem; color: var(--text-muted); margin: 0;">
                         A confirmation email has been sent to your inbox. Check your spam folder if you don't see it!
                     </p>
                 </div>
-                <button onclick="navigateTo('home')" class="btn btn-primary" style="width: 100%;">Return to Home</button>
+                <button onclick="navigateTo('home')" class="btn btn-primary" style="width: 100%;">Return to
+                    Home</button>
             </div>
         </div>
     </section>
@@ -1939,9 +1982,9 @@
             <div class="footer-col contact-col">
                 <h4>Contact</h4>
                 <p><i class="fas fa-phone-alt"></i> +1 (720) 556-1588</p>
-                <p><i class="fas fa-envelope"></i> ptorres2824@gmail.com</p>
+                <p><i class="fas fa-envelope"></i> ptswindowcleaning@gmail.com</p>
                 <p><i class="fas fa-map-marker-alt"></i> 6610 W 109th Pl, Westminster, CO 80020, US</p>
-                <p><i class="fas fa-clock"></i> 7 AM to 6 PM Denver Time</p>
+                <p><i class="fas fa-clock"></i> 7 AM to 7 PM Denver Time</p>
                 <button onclick="navigateTo('contact')" class="btn btn-warning footer-cta">FREE ESTIMATE</button>
             </div>
         </div>
@@ -1952,14 +1995,14 @@
             </div>
         </div>
     </footer>
-    
+
 
     <!-- AI CHATBOT WINDOW -->
     <div class="chatbot-window" id="chatbotWindow">
         <div class="chatbot-header">
             <div>
                 <strong>PT'sAssistant</strong>
-                <div style="font-size: 0.75rem; opacity: 0.8;">Online 7 AM to 6 PM Denver Time</div>
+                <div style="font-size: 0.75rem; opacity: 0.8;">Online 7 AM to 7 PM Denver Time</div>
             </div>
             <button class="chatbot-close" onclick="toggleChatbot()">
                 <i class="fas fa-times"></i>
@@ -2262,7 +2305,7 @@
             }
 
             if (message.includes('hour') || message.includes('time') || message.includes('available')) {
-                return "We're available Sunday to Saturday 7 AM - 6 PM Denver Time!";
+                return "We're available Sunday to Saturday 7 AM - 7 PM Denver Time!";
             }
 
         }
